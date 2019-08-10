@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "removeComments": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "outDir": "./build",
+    "rootDir": "./",
+  },
+  "files": [
+    "<%= component_name %>.ts"
+  ],
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "node_modules",
+    "test",
+    "demo"
+  ],
+}
