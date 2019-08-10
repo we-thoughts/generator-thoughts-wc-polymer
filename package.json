@@ -9,7 +9,7 @@
     "url": "https://thoughts.vip"
   },
   "files": [
-    "generators"
+    "*"
   ],
   "main": "generators/index.js",
   "keywords": [
