@@ -1,6 +1,6 @@
 # \<<%= component_name %>\>
 
-[![<%= component_name %>](https://badge.fury.io/js/<%= component_name%>.svg)](https://npmjs.org/package/<%= package_name %>)
+[![<%= component_name %>](https://badge.fury.io/js/<%= repository_encode%>.svg)](https://npmjs.org/package/<%= package_name %>)
 
 <%= description %>
 
