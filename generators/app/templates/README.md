@@ -1,8 +1,8 @@
 # \<<%= component_name %>\>
 
-[![<%= component_name %>](https://badge.fury.io/js/<%= repository_encode%>.svg)](https://npmjs.org/package/<%= package_name %>)
+[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-<%= description %>
+> <%= description %>
 
 ## 使用方式（How to Use）
 
@@ -136,3 +136,12 @@ npm run dist
 ## License
 
 GPL-3.0 © [cigaret](https://thoughts.vip)
+
+[npm-image]: https://badge.fury.io/js/<%= package_name_encode %>.svg
+[npm-url]: https://npmjs.org/package/<%= package_name %>
+[daviddm-image]: https://david-dm.org/<%= repository %>.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/<%= repository %>
+[travis-image]: https://travis-ci.com/<%= repository %>.svg?branch=master
+[travis-url]: https://travis-ci.com/<%= repository %>
+[coveralls-image]: https://coveralls.io/repos/<%= repository %>/badge.svg
+[coveralls-url]: https://coveralls.io/r/<%= repository %>

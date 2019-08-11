@@ -201,6 +201,12 @@ module.exports = class extends Generator {
           this.props.npm_scope === ""
             ? this.props.component_name
             : `@${this.props.npm_scope}/${this.props.component_name}`,
+        package_name_encode:
+          this.props.npm_scope === ""
+            ? this.props.component_name
+            : encodeURIComponent(
+                `@${this.props.npm_scope}/${this.props.component_name}`
+              ),
         repository: `${this.props.github_username}/${this.props.component_name}`,
         repository_encode: encodeURIComponent(
           `${this.props.github_username}/${this.props.component_name}`
