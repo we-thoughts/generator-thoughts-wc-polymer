@@ -6,5 +6,7 @@ branches:
   - master
 install:
   - npm install
-script: true
-after_script: cat ./coverage/lcov.info | coveralls
+script:
+  - npm test
+after_script:
+  - cat ./coverage/lcov.info | coveralls

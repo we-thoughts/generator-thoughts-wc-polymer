@@ -6,21 +6,21 @@ const chalk = require("chalk");
 const yosay = require("yosay");
 
 function toHump(str) {
-  let res = str.replace(/\-(\w)/g, function(all, letter) {
+  let res = str.replace(/-(\w)/g, function(all, letter) {
     return letter.toUpperCase();
   });
   res = res[0].toUpperCase() + res.substr(1);
   return res;
 }
 
-let props = {};
+global.props = {};
 
 module.exports = class extends Generator {
   initialzing() {
     this.props = {};
   }
 
-  async prompting() {
+  prompting() {
     // Have Yeoman greet the user.
     this.log(
       yosay(
@@ -111,7 +111,7 @@ module.exports = class extends Generator {
       }
     ];
 
-    return await this.prompt(prompts).then(props => {
+    return this.prompt(prompts).then(props => {
       // To access props later use this.props.someAnswer;
       global.props = props;
     });
@@ -202,7 +202,9 @@ module.exports = class extends Generator {
             ? this.props.component_name
             : `@${this.props.npm_scope}/${this.props.component_name}`,
         repository: `${this.props.github_username}/${this.props.component_name}`,
-        repository_encode: encodeURIComponent(`${this.props.github_username}/${this.props.component_name}`)
+        repository_encode: encodeURIComponent(
+          `${this.props.github_username}/${this.props.component_name}`
+        )
       }
     );
     this.fs.copyTpl(
@@ -233,7 +235,7 @@ module.exports = class extends Generator {
       {
         author_name: this.props.author_name,
         author_email: this.props.author_email,
-        author_homepage: this.props.author_homepage,
+        author_homepage: this.props.author_homepage
       }
     );
   }
@@ -261,6 +263,7 @@ module.exports = class extends Generator {
     if (this.props.if_auto_npm_install) {
       this.npmInstall();
     }
+
     this.spawnCommandSync("npm run init");
     if (this.props.if_github_repository) {
       this.log(`\nYou already have a GitHub repository named:
@@ -275,12 +278,6 @@ module.exports = class extends Generator {
   }
 
   end() {
-    this.log(
-      yosay(
-        `${chalk.red(
-          "Enjoy your development !"
-        )}`
-      )
-    );
+    this.log(yosay(`${chalk.red("Enjoy your development !")}`));
   }
 };

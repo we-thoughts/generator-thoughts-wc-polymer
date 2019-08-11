@@ -62,7 +62,8 @@
       "node": true
     },
     "rules": {
-      "prettier/prettier": "error"
+      "prettier/prettier": "error",
+      "camelcase": "warn"
     },
     "plugins": [
       "prettier"
