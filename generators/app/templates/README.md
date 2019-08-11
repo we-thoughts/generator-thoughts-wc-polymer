@@ -119,7 +119,7 @@ npm run init
 npm run push
 # 预览组件，实为调用 polymer serve
 npm run serve
-# 测试组件，实为调用 polymer test -l chrome
+# 测试组件，实为调用 polymer test -l chrome --skip-selenium-install
 npm run test
 # typescript 转译
 npm run build
