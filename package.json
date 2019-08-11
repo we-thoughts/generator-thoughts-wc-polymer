@@ -71,7 +71,7 @@
   },
   "scripts": {
     "pretest": "npx eslint . --fix",
-    "test": "npx jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "npx jest --coverage"
   },
   "repository": "we-thoughts/generator-thoughts-wc-polymer",
   "license": "GPL-3.0"
