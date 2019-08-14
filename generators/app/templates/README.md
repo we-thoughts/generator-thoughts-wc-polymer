@@ -1,6 +1,6 @@
 # \<<%= component_name %>\>
 
-[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][codecov-image]][codecov-url]
 
 > <%= description %>
 
@@ -119,7 +119,7 @@ npm run init
 npm run push
 # 预览组件，实为调用 polymer serve
 npm run serve
-# 测试组件，实为调用 polymer test -l chrome --skip-selenium-install
+# 测试组件，实为调用 polymer test
 npm run test
 # typescript 转译
 npm run build
@@ -143,5 +143,5 @@ GPL-3.0 © [cigaret](https://thoughts.vip)
 [daviddm-url]: https://david-dm.org/<%= repository %>
 [travis-image]: https://travis-ci.com/<%= repository %>.svg?branch=master
 [travis-url]: https://travis-ci.com/<%= repository %>
-[coveralls-image]: https://coveralls.io/repos/<%= repository %>/badge.svg
-[coveralls-url]: https://coveralls.io/r/<%= repository %>
+[codecov-image]: https://codecov.io/gh/<%= repository %>/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/<%= repository %>

@@ -13,7 +13,7 @@
     "init": "git init && git add . && git commit -m initialize && git remote add origin git@github.com:<%= repository %>.git ",
     "push": "git push -u origin master",
     "serve": "<% if (if_local_polymer_cli) { %>npx<% } %>polymer serve",
-    "test": "<% if (if_local_polymer_cli) { %>npx<% } %>polymer test -l chrome --skip-selenium-install",
+    "test": "<% if (if_local_polymer_cli) { %>npx<% } %>polymer test",
     "build": "<% if (if_local_typescript) { %>npx<% } %>tsc && cp ./build/%npm_package_config_wc_name%.js %npm_package_config_wc_name%.js",
     "dist": "<% if (if_local_typescript) { %>npx<% } %>tsc && webpack --mode development --config webpack.config.js"
   },
@@ -22,6 +22,7 @@
     "@polymer/test-fixture": "^4.0.2",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "chai": "^4.2.0",
+    "codecov": "^3.5.0",
     "mocha": "^6.1.4",
     "ts-loader": "^6.0.4",
     "wct-mocha": "^1.0.1",

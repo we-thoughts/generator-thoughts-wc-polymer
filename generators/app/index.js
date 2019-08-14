@@ -221,9 +221,20 @@ module.exports = class extends Generator {
         element_name: toHump(this.props.component_name)
       }
     );
+    this.fs.copy(
+      this.templatePath("travis.yml"),
+      this.destinationPath(".travis.yml")
+    );
     this.fs.copyTpl(
       this.templatePath("tsconfig.json"),
       this.destinationPath("tsconfig.json"),
+      {
+        component_name: this.props.component_name
+      }
+    );
+    this.fs.copyTpl(
+      this.templatePath("wct.conf.json"),
+      this.destinationPath("wct.conf.json"),
       {
         component_name: this.props.component_name
       }
