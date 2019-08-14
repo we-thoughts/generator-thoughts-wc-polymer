@@ -89,6 +89,7 @@ git --version
 ```json
 | - <%= component_name %>
 	| - [build] - tsc 转译之后输出位置
+    | - [coverage] - 测试覆盖度数据，执行测试时生成，可删除
 	| - [demo] - polymer 自动生成
 		| - index.html
 	| - [dist] - webpack 打包输出位置
@@ -98,13 +99,17 @@ git --version
 		| - index.html
 		| - <%= component_name %>_test.html
 	| - .gitignore - gitignore
+    | - .travis.yml - TravisCI 配置文件
 	| - index.html - 自动重定向至 demo/index.html
-	| - package-lock.json
+    | - LICENSE - 开源许可
+	| - package-lock.json - 执行 npm install 后自动生成
 	| - package.json
 	| - polymer.json
 	| - README.md
+    | - <%= component_name %>.js - tsc 转译后一式两份
 	| - <%= component_name %>.ts
-	| - tsconfig.json
+	| - tsconfig.json - TypeScript 配置文件
+    | - wct.conf.json - web-component-tester 配置文件
 	| - webpack.config.js
 ```
 
