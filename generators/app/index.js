@@ -93,12 +93,6 @@ module.exports = class extends Generator {
       },
       {
         type: "confirm",
-        name: "if_local_typescript",
-        message: "Do you want to install typescript locally?",
-        default: false
-      },
-      {
-        type: "confirm",
         name: "if_local_polymer_cli",
         message: "Do you want to install polymer-cli locally?",
         default: false
@@ -158,6 +152,14 @@ module.exports = class extends Generator {
       }
     );
     this.fs.copy(
+      this.templatePath("eslintignore"),
+      this.destinationPath(".eslintignore")
+    );
+    this.fs.copy(
+      this.templatePath("eslintrc.js"),
+      this.destinationPath(".eslintrc.js")
+    );
+    this.fs.copy(
       this.templatePath("gitignore"),
       this.destinationPath(".gitignore")
     );
@@ -182,7 +184,6 @@ module.exports = class extends Generator {
         author_email: this.props.author_email,
         author_homepage: this.props.author_homepage,
         repository: `${this.props.github_username}/${this.props.component_name}`,
-        if_local_typescript: this.props.if_local_typescript,
         if_local_polymer_cli: this.props.if_local_polymer_cli
       }
     );
@@ -262,15 +263,12 @@ module.exports = class extends Generator {
   }
 
   _writingPkgJSON() {
-    let { if_local_typescript, if_local_polymer_cli } = this.props;
+    let { if_local_polymer_cli } = this.props;
     const pkgJson = {
       keywords: [],
       devDependencies: {}
     };
     pkgJson.keywords = this.props.package_keywords.split(",");
-    if (if_local_typescript) {
-      pkgJson.devDependencies.typescript = "^3.5.3";
-    }
 
     if (if_local_polymer_cli) {
       pkgJson.devDependencies["polymer-cli"] = "^1.9.11";
