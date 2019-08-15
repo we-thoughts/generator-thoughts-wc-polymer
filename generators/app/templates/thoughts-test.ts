@@ -1,4 +1,4 @@
-import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import { html, PolymerElement } from "@polymer/polymer/polymer-element.js";
 
 /**
  * `<%= component_name %>`
@@ -19,6 +19,7 @@ class <%= element_name %> extends PolymerElement {
       <h2>Hello [[prop1]]!</h2>
     `;
   }
+
   static get properties() {
     return {
       prop1: {
