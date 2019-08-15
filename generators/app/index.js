@@ -225,6 +225,10 @@ module.exports = class extends Generator {
       this.templatePath("travis.yml"),
       this.destinationPath(".travis.yml")
     );
+    this.fs.copy(
+      this.templatePath("tsconfig.eslint.json"),
+      this.destinationPath("tsconfig.eslint.json")
+    );
     this.fs.copyTpl(
       this.templatePath("tsconfig.json"),
       this.destinationPath("tsconfig.json"),
